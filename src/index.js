@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 //   res.send("<h2>It's Working!</h2>");
 // });
 
-app.use("/api/workouts", v1WorkoutRoutes);
+app.use("/api/v1/workouts", v1WorkoutRoutes);
 
 app.listen(PORT, () => {
   console.log(`API is listening on port ${PORT}`);
