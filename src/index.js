@@ -1,7 +1,6 @@
 const express = require("express");
 
-//Router for V1
-const v1Router = require("./v1/routes/v1-routes");
+const v1WorkoutRoutes = require("./v1/routes/workoutRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -11,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 //   res.send("<h2>It's Working!</h2>");
 // });
 
-app.use("/api/v1", v1Router);
+app.use("/api/workouts", v1WorkoutRoutes);
 
 app.listen(PORT, () => {
   console.log(`API is listening on port ${PORT}`);
