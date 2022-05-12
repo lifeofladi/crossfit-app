@@ -11,13 +11,15 @@ const getOneWorkout = () => {
 };
 
 const createNewWorkout = newWorkout => {
+  console.log("creating workout....");
   const workoutToInsert = {
     id: uuid(),
+    ...newWorkout,
     createdAt: new Date().toLocaleString("en-US", { timeZone: "UTC" }),
     updatedAt: new Date().toLocaleString("en-US", { timeZone: "UTC" }),
-    ...newWorkout,
   };
-  return Workout.createNewWorkout(workoutToInsert);
+  const createdWorkout = Workout.createNewWorkout(workoutToInsert);
+  return createNewWorkout;
 };
 
 const updateOneWorkout = () => {
